@@ -12,6 +12,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/backgroundColor</item>
         <!-- Customize your theme here. -->
+
+        <item name="android:windowBackground">@color/backgroundColor</item>
     </style>
 
     <style name="Widget.App.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
