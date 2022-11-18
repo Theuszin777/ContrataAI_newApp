@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 
 import magnago.matheus.contrata_app.ChatActivity;
+import magnago.matheus.contrata_app.MainActivity;
 import magnago.matheus.contrata_app.R;
 
 public class MessagesFragment extends Fragment {
@@ -33,29 +34,32 @@ public class MessagesFragment extends Fragment {
         imbMen1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i1 = new Intent(MessagesFragment.this, ChatActivity.class);
-                startActivity(i1);
+                MainActivity activity = (MainActivity) getActivity();
+                activity.navigateToHomeActivity();
             }
         });
 
         imbMen2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                MainActivity activity = (MainActivity) getActivity();
+                activity.navigateToHomeActivity();
             }
         });
 
         imbMen3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                MainActivity activity = (MainActivity) getActivity();
+                activity.navigateToHomeActivity();
             }
         });
 
         imbMen4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                MainActivity activity = (MainActivity) getActivity();
+                activity.navigateToHomeActivity();
             }
         });
     }

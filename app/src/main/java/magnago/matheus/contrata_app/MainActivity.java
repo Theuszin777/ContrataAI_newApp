@@ -8,9 +8,11 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import magnago.matheus.contrata_app.databinding.ActivityMainBinding;
+import magnago.matheus.contrata_app.fragments.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,4 +40,10 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.bottomNavigation, navController);
     }
 
+    public void navigateToHomeActivity() {
+
+       Intent i = new Intent(MainActivity.this, ChatActivity.class);
+       startActivity(i);
+
+    }
 }
