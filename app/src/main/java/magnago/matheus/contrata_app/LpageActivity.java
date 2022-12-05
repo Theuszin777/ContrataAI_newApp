@@ -17,16 +17,24 @@ public class LpageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lpage);
 
+        abrirCadastro();
+        abrirLogin();
+    }
+
+    public void abrirCadastro () {
         btnLP1 = findViewById(R.id.btnLP1);
-        btnLP2 = findViewById(R.id.btnLP2);
 
         btnLP1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(LpageActivity.this, CadastroActivity.class);
-                startActivity(i);
+                Intent i1 = new Intent(LpageActivity.this, CadastroActivity.class);
+                startActivity(i1);
             }
         });
+    }
+
+    public void abrirLogin() {
+        btnLP2 = findViewById(R.id.btnLP2);
 
         btnLP2.setOnClickListener(new View.OnClickListener() {
             @Override

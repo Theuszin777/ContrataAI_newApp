@@ -6,52 +6,69 @@
     android:layout_height="match_parent"
     tools:context=".ChatActivity">
 
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="409dp"
-        android:layout_height="70dp"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="43dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="@string/app_name"
-        android:cropToPadding="false"
-        android:src="?attr/actionModeCloseDrawable"
-        android:textAlignment="viewStart"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#00FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_24"
-        app:tint="#EFEBEB" />
+        app:layout_constraintVertical_bias="0.002"
+        app:popupTheme="@style/Theme.Contrataííí_app.PopupOverlay">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleChatFoto"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/avatar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="Matheus Magnago"
+            android:textColor="#E3E3E3"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <EditText
+        android:id="@+id/etChat1"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/input_text"
+        android:ems="10"
+        android:gravity="start|center"
+        android:hint="Inicie sua conversa..."
+        android:inputType="textMultiLine"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.973" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="50dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toEndOf="@+id/imageButton"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="right"
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="256dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="16dp"
-        android:text="Matheus"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+        app:layout_constraintBottom_toBottomOf="@+id/etChat1"
+        app:layout_constraintEnd_toEndOf="@+id/etChat1"
+        app:layout_constraintHorizontal_bias="0.978"
+        app:layout_constraintStart_toStartOf="@+id/etChat1"
+        app:layout_constraintTop_toTopOf="@+id/etChat1"
+        app:layout_constraintVertical_bias="0.472"
+        app:srcCompat="@drawable/ic_baseline_add_link_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_app"
     tools:context=".CadastroActivity">
 
     <LinearLayout
@@ -13,19 +14,19 @@
         android:orientation="vertical">
 
         <ImageButton
-            android:id="@+id/imbCF"
+            android:id="@+id/imbCad1"
             android:layout_width="51dp"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_margin="10dp"
-            android:background="@color/backgroundColor"
-            android:minHeight="48dp"
+            android:background="#000C4B5A"
             android:contentDescription="Voltar"
+            android:minHeight="48dp"
             app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
 
         <TextView
-            android:id="@+id/tvCF1"
+            android:id="@+id/tvCad1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
@@ -36,7 +37,7 @@
             android:textSize="30dp" />
 
         <EditText
-            android:id="@+id/etNomeCF"
+            android:id="@+id/etNomeCad1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -50,7 +51,7 @@
             android:textColorHint="@color/white" />
 
         <EditText
-            android:id="@+id/etEmailCF"
+            android:id="@+id/etEmailCad2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -64,7 +65,7 @@
             android:textColorHint="@color/white" />
 
         <EditText
-            android:id="@+id/etCpfCF"
+            android:id="@+id/etCpfCad3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -78,7 +79,7 @@
             android:textColorHint="@color/white" />
 
         <EditText
-            android:id="@+id/etSenhaCF"
+            android:id="@+id/etSenhaCad4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -93,7 +94,7 @@
 
 
         <EditText
-            android:id="@+id/etProfCF"
+            android:id="@+id/etProfCad5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -108,7 +109,7 @@
 
 
         <Button
-            android:id="@+id/btnCF"
+            android:id="@+id/btnCad1"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="80dp"

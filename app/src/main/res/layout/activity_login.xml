@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_app"
     tools:context=".LoginActivity">
 
     <LinearLayout
@@ -12,12 +13,12 @@
         android:orientation="vertical">
 
         <ImageButton
-            android:id="@+id/imbLF"
+            android:id="@+id/imbLog1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_margin="10dp"
-            android:background="@color/backgroundColor"
+            android:background="#00009688"
             android:contentDescription="Voltar"
             android:minWidth="48dp"
             android:minHeight="48dp"
@@ -25,7 +26,7 @@
 
 
         <TextView
-            android:id="@+id/tvLF1"
+            android:id="@+id/tvLog1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
@@ -36,7 +37,7 @@
             android:textSize="30dp" />
 
         <EditText
-            android:id="@+id/etEmailLF"
+            android:id="@+id/etEmailLog1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -50,7 +51,7 @@
             android:textColorHint="@color/white" />
 
         <EditText
-            android:id="@+id/etSenhaLF"
+            android:id="@+id/etSenhaLog2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -64,7 +65,7 @@
             android:textColorHint="@color/white" />
 
         <Button
-            android:id="@+id/btnLF1"
+            android:id="@+id/btnLog1"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginLeft="80dp"

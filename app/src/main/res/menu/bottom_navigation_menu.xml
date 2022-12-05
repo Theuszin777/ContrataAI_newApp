@@ -10,6 +10,13 @@
         app:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/search"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="Pesquisa"
+        app:showAsAction="ifRoom"/>
+
+    <item
         android:id="@+id/notify"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_notifications_24"
