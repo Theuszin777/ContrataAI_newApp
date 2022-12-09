@@ -22,6 +22,8 @@ import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 
+import java.sql.Connection;
+
 import magnago.matheus.contrata_app.fragment.HomeFragment;
 import magnago.matheus.contrata_app.fragment.MessagesFragment;
 import magnago.matheus.contrata_app.fragment.NotifyFragment;
@@ -31,7 +33,9 @@ import magnago.matheus.contrata_app.fragment.SearchFragment;
 
 public class MainActivity extends AppCompatActivity {
 
+
     RatingBar ratingBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Toolbar
         Toolbar tbar = findViewById(R.id.tbarHome);
-        tbar.setTitle("CONTRATAÍ");
+        tbar.setTitle("ContratAÍ");
         setSupportActionBar(tbar);
 
         // Configurar bottom nav view
@@ -112,10 +116,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.menu_deslog:
-                //deslogarUsuario();
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                break;
 
             case R.id.menu_settings:
                 //Configurações;
@@ -125,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 
     /*// Função para deslogar um usuário -> aguardando PHP
     private void deslogarUsuario() {

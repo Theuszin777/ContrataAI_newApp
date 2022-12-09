@@ -4,23 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-
-import java.util.ArrayList;
+import android.widget.ImageButton;
 
 import magnago.matheus.contrata_app.ChatActivity;
 import magnago.matheus.contrata_app.R;
-import magnago.matheus.contrata_app.adapter.MensagensAdapter;
 
 public class MessagesFragment extends Fragment {
 
-    private Button irParaChat;
+    ImageButton imageButton;
     //private RecyclerView rcviewListMensagens;
     //private MensagensAdapter adapter;
     /*Usuario*/
@@ -39,12 +34,12 @@ public class MessagesFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_messages, container, false);
 
-        irParaChat = view.findViewById(R.id.btnMsg1);
-        irParaChat.setOnClickListener(new View.OnClickListener() {
+        imageButton = view.findViewById(R.id.ibMens1);
+        imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(), ChatActivity.class);
-                startActivity(i);
+            public void onClick(View view) {
+                Intent i1 = new Intent(getActivity(), ChatActivity.class);
+                startActivity(i1);
             }
         });
         //rcviewListMensagens = view.findViewById(R.id.rcViewListaMensagens);

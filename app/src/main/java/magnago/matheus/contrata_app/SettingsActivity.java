@@ -57,10 +57,11 @@ public class SettingsActivity extends AppCompatActivity {
     public boolean onClickButtonsSettings() {
 
         Switch sw1, sw2;
-        Button btn1, btn2;
+        Button btn1, btn2, btn3;
 
         btn1 = findViewById(R.id.btnSettings1);
         btn2 = findViewById(R.id.btnSettings2);
+        btn3 = findViewById(R.id.btnSettings3);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +76,14 @@ public class SettingsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i2 = new Intent(SettingsActivity.this, EditProfileActivity.class);
                 startActivity(i2);
+            }
+        });
+
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i3 = new Intent(SettingsActivity.this, LpageActivity.class);
+                startActivity(i3);
             }
         });
 
