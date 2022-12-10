@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 
 public class Config {
 
-    public static String CONTRATAI_URL = "";
+    public static String CONTRATAI_URL = "http://10.0.2.2/";
 
     public static void setEmail(Context context, String email) {
         SharedPreferences mPrefs = context.getSharedPreferences("configs", 0);

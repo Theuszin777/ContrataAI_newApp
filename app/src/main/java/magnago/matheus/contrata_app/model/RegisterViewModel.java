@@ -15,7 +15,7 @@ public class RegisterViewModel extends AndroidViewModel {
         super(application);
     }
 
-    public LiveData<Boolean> register(String newNome, String newEmail, String newCpf, String newPassword, String newProfissao) {
+    public LiveData<Boolean> register(String newNome, String newEmail, String newCpf, String newPassword) {
 
         MutableLiveData<Boolean> result = new MutableLiveData<>();
 
@@ -26,7 +26,7 @@ public class RegisterViewModel extends AndroidViewModel {
             public void run() {
                 ConecBD conecBD = new ConecBD(getApplication());
 
-                boolean b = conecBD.register(newNome, newEmail, newCpf, newPassword, newProfissao);
+                boolean b = conecBD.register(newNome, newEmail, newCpf, newPassword);
                 result.postValue(b);
             }
         });

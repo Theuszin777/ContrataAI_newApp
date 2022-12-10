@@ -73,13 +73,7 @@ public class CadastroActivity extends AppCompatActivity {
                     return;
                 }
 
-                etProf = findViewById(R.id.etProfCad5);
-                final String newProfissao = etProf.getText().toString();
-                if (newNome.isEmpty()) {
-                    Toast.makeText(CadastroActivity.this, "Profissão não preenchida", Toast.LENGTH_LONG).show();
-                }
-
-                LiveData<Boolean> resultLD = registerViewModel.register(newNome, newEmail, newCpf, newPassword, newProfissao);
+                LiveData<Boolean> resultLD = registerViewModel.register(newNome, newEmail, newCpf, newPassword);
 
 
                 resultLD.observe(CadastroActivity.this, new Observer<Boolean>() {
