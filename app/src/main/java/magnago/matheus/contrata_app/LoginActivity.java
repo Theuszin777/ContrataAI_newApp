@@ -1,6 +1,9 @@
 package magnago.matheus.contrata_app;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,41 +14,66 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import magnago.matheus.contrata_app.Util.Config;
+import magnago.matheus.contrata_app.model.LoginViewModel;
+
 public class LoginActivity extends AppCompatActivity {
 
     ImageButton imbLA;
     Button btnLA, btnLogar;
     EditText etLog1, etLog2;
+    static int RESULT_REQUEST_PERMISSION = 2;
+    LoginViewModel loginViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // LOGAR
-        /*btnLogar.setOnClickListener(new View.OnClickListener() {
+        loginViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
+
+        Button btnLogin = findViewById(R.id.btnLog1);
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                String txtEmailLog1 = etLog1.getText().toString();
-                String txtSenhaLog2 = etLog2.getText().toString();
+            public void onClick(View v) {
 
-                if (!txtEmailLog1.isEmpty()) {
-                    if (!txtSenhaLog2.isEmpty()) {
+                EditText etEmail = findViewById(R.id.etEmailLog1);
+                final String email = etEmail.getText().toString();
 
+                EditText etPassword = findViewById(R.id.etSenhaLog2);
+                final String password = etPassword.getText().toString();
+
+                LiveData<Boolean> resultLD = loginViewModel.login(email, password);
+
+
+                resultLD.observe(LoginActivity.this, new Observer<Boolean>() {
+
+                    @Override
+                    public void onChanged(Boolean aBoolean) {
+
+                        if(aBoolean) {
+
+                            Config.setEmail(LoginActivity.this, email);
+                            Config.setPassword(LoginActivity.this, password);
+
+                            Toast.makeText(LoginActivity.this, "Login realizado com sucesso", Toast.LENGTH_LONG).show();
+
+                            Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                            startActivity(i);
+                        }
+                        else {
+
+                            Toast.makeText(LoginActivity.this, "Não foi possível realizar o login da aplicação", Toast.LENGTH_LONG).show();
+                            Intent i2 = new Intent(LoginActivity.this, LpageActivity.class);
+                            startActivity(i2);
+                        }
                     }
-                    else {
-                        Toast.makeText(LoginActivity.this,"Senha não informada!!!",Toast.LENGTH_SHORT).show();
-
-                    }
-                }
-                else {
-                    Toast.makeText(LoginActivity.this,"E-mail não informado!!!",Toast.LENGTH_SHORT).show();
-
-                }
+                });
             }
-        });*/
+        });
 
-        AbrirHome();
+
+        //AbrirHome();
         BackLandingPage();
 
 

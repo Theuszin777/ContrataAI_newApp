@@ -94,6 +94,21 @@
 
 
         <EditText
+            android:id="@+id/etSenhaCadConfirm5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/white"
+            android:ems="10"
+            android:hint="Senha"
+            android:inputType="textPassword"
+            android:minHeight="50dp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textColorHint="@color/white" />
+
+
+        <EditText
             android:id="@+id/etProfCad5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -106,7 +121,6 @@
             android:text=""
             android:textColor="@color/white"
             android:textColorHint="@color/white" />
-
 
         <Button
             android:id="@+id/btnCad1"

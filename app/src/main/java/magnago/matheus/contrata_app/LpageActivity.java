@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import magnago.matheus.contrata_app.Util.Config;
+
 public class LpageActivity extends AppCompatActivity {
 
 
@@ -17,9 +19,23 @@ public class LpageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lpage);
 
+
+        if(Config.getEmail(LpageActivity.this).isEmpty()) {
+
+        }
+
+        else {
+            Intent i = new Intent(LpageActivity.this, MainActivity.class);
+            startActivity(i);
+            finish();
+        }
+
         abrirCadastro();
         abrirLogin();
+
     }
+
+
 
     public void abrirCadastro () {
         btnLP1 = findViewById(R.id.btnLP1);
