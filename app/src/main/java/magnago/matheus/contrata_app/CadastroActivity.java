@@ -19,7 +19,7 @@ public class CadastroActivity extends AppCompatActivity {
 
     ImageButton imbCF;
     Button btnCF, btnCadastrar;
-    private EditText etNome, etEmail, etCPF, etSenha, etProf;
+    private EditText etNome, etEmail, etCPF, etSenha, etTelefone;
     RegisterViewModel registerViewModel;
 
     @Override
@@ -61,19 +61,26 @@ public class CadastroActivity extends AppCompatActivity {
                     return;
                 }
 
-                EditText etNewPasswordCheck =  findViewById(R.id.etSenhaCadConfirm5);
+                etTelefone = findViewById(R.id.etCadTelefone);
+                final String newTelefone = etTelefone.getText().toString();
+                if (newTelefone.isEmpty()) {
+                    Toast.makeText(CadastroActivity.this, "Telefone não preenchido", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                /*EditText etNewPasswordCheck =  findViewById(R.id.etSenhaCadConfirm5);
                 String newPasswordCheck = etNewPasswordCheck.getText().toString();
                 if(newPasswordCheck.isEmpty()) {
                     Toast.makeText(CadastroActivity.this, "Campo de checagem de senha não preenchido", Toast.LENGTH_LONG).show();
                     return;
-                }
+                }*/
 
-                if(!newPassword.equals(newPasswordCheck)) {
+                /*if(!newPassword.equals(newPasswordCheck)) {
                     Toast.makeText(CadastroActivity.this, "Senha não confere", Toast.LENGTH_LONG).show();
                     return;
-                }
+                }*/
 
-                LiveData<Boolean> resultLD = registerViewModel.register(newNome, newEmail, newCpf, newPassword);
+                LiveData<Boolean> resultLD = registerViewModel.register(newNome, newEmail, newCpf, newPassword, newTelefone);
 
 
                 resultLD.observe(CadastroActivity.this, new Observer<Boolean>() {

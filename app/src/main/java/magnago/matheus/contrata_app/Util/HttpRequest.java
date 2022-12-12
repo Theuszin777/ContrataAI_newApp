@@ -24,6 +24,7 @@ public class HttpRequest {
     private String charset;
 
     HashMap<String, String> params = new HashMap<>();
+    HashMap<String, File> files = new HashMap<>();
 
     String user = "";
     String password = "";
@@ -123,6 +124,10 @@ public class HttpRequest {
         }
         // Retrieve the response body as an InputStream.
         return httpConn.getInputStream();
+    }
+
+    public void addFile(String key, File file) {
+        this.files.put(key, file);
     }
 
     // Fecha a conexao

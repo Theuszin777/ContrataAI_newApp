@@ -11,10 +11,12 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -23,7 +25,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import java.io.ByteArrayOutputStream;
+
 import de.hdodenhof.circleimageview.CircleImageView;
+import magnago.matheus.contrata_app.Util.ImageCache;
 import magnago.matheus.contrata_app.fragment.ProfileFragment;
 import magnago.matheus.contrata_app.permissoes.Permissao;
 
@@ -110,6 +115,13 @@ public class EditProfileActivity extends AppCompatActivity {
                 }
                 if (imagem != null) {
                     CircleImgProfile.setImageBitmap(imagem);
+
+                    byte[] fotoByte;
+                    ByteArrayOutputStream streamFotoByte = new ByteArrayOutputStream();
+
+                    imagem.compress(Bitmap.CompressFormat.PNG, 75, streamFotoByte);
+                    fotoByte = streamFotoByte.toByteArray();
+                    String fotoString = Base64.encodeToString(fotoByte, Base64.DEFAULT);
 
                 }
             }

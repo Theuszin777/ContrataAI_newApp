@@ -21,13 +21,14 @@ public class ConecBD {
         this.context = context;
     }
 
-    public boolean register(String newNome, String newEmail, String newCpf, String newPassword) {
+    public boolean register(String newNome, String newEmail, String newCpf, String newPassword, String newTelefone) {
 
         HttpRequest httpRequest = new HttpRequest(Config.CONTRATAI_URL + "register.php", "POST", "UTF-8");
         httpRequest.addParam("novo_nome", newNome);
         httpRequest.addParam("novo_email", newEmail);
         httpRequest.addParam("novo_cpf", newCpf);
         httpRequest.addParam("nova_senha", newPassword);
+        httpRequest.addParam("novo_telefone", newTelefone);
 
         String result = "";
         try {
