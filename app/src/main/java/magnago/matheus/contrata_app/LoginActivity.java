@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        //AbrirHome();
+        AbrirHome();
         BackLandingPage();
 
 

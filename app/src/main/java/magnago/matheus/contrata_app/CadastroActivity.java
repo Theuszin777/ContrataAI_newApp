@@ -14,10 +14,12 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import magnago.matheus.contrata_app.model.RegisterViewModel;
+import magnago.matheus.contrata_app.model.Usuario;
 
 public class CadastroActivity extends AppCompatActivity {
 
     ImageButton imbCF;
+    Usuario usuario;
     Button btnCF, btnCadastrar;
     private EditText etNome, etEmail, etCPF, etSenha, etTelefone;
     RegisterViewModel registerViewModel;
@@ -82,12 +84,17 @@ public class CadastroActivity extends AppCompatActivity {
 
                 LiveData<Boolean> resultLD = registerViewModel.register(newNome, newEmail, newCpf, newPassword, newTelefone);
 
-
                 resultLD.observe(CadastroActivity.this, new Observer<Boolean>() {
                     @Override
                     public void onChanged(Boolean aBoolean) {
 
                         if(aBoolean) {
+                            usuario = new Usuario();
+                            usuario.setNome(newNome);
+                            usuario.setEmail(newEmail);
+                            usuario.setCpf(newCpf);
+                            usuario.setSenha(newPassword);
+                            usuario.setTelefone(newTelefone);
                             Toast.makeText(CadastroActivity.this, "Novo usuario registrado com sucesso", Toast.LENGTH_LONG).show();
                             finish();
                         }

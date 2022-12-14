@@ -122,7 +122,7 @@ public class EditProfileActivity extends AppCompatActivity {
                     imagem.compress(Bitmap.CompressFormat.PNG, 75, streamFotoByte);
                     fotoByte = streamFotoByte.toByteArray();
                     String fotoString = Base64.encodeToString(fotoByte, Base64.DEFAULT);
-
+                    ImageCache.loadImageBase64ToImageView(EditProfileActivity.this, fotoString, CircleImgProfile, 100, 100);
                 }
             }
             catch (Exception e) {
